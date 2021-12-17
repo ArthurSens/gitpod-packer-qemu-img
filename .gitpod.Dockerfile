@@ -3,7 +3,7 @@ FROM gitpod/workspace-full
 USER root
 
 
-ENV WORKSPACE_KERNEL 5.4.0-1033-gke
+ENV WORKSPACE_KERNEL 5.13.0-1007-gcp
 
 RUN apt update -y && \
     apt install -y qemu qemu-system-x86 libguestfs-tools linux-image-$WORKSPACE_KERNEL sshpass netcat
