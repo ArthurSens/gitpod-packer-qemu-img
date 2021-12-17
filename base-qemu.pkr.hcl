@@ -191,7 +191,7 @@ locals {
 }
 
 source "qemu" "qemu" {
-  accelerator = "kvm"
+  accelerator = "none"
   boot_command = [
     "<wait><wait><wait><esc><esc><esc><enter><wait><wait><wait>",
     "/casper/vmlinuz root=/dev/sr0 initrd=/casper/initrd autoinstall ",

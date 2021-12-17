@@ -2,8 +2,11 @@ FROM gitpod/workspace-full
 
 USER root
 
+
+ENV WORKSPACE_KERNEL 5.4.0-1033-gke
+
 RUN apt update -y && \
-    apt install -y qemu qemu-system-x86 libguestfs-tools sshpass netcat
+    apt install -y qemu qemu-system-x86 libguestfs-tools linux-image-$WORKSPACE_KERNEL sshpass netcat
 
 ## packer
 RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - && \
