@@ -2,13 +2,6 @@
 
 set -euo pipefail
 
-if [ ! "$WORKSPACE_KERNEL" == "$(uname -r)" ]; then
-    echo "The WORKSPACE_KERNEL environment variable and the current running workspace kernel are not equal, please update the WORKSPACE_KERNEL variable accordingly in the workspace dockerfile: dev/image/Dockerfile"
-    echo "WORKPACE_KERNEL=${WORKSPACE_KERNEL}"
-    echo "Current kernel=$(uname -r)"
-    exit 1
-fi
-
 img_url="https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.tar.gz"
 
 script_dirname="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
